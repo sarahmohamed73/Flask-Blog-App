@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {%endblock%}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='fontawesome/css/all.css')}}">
+</head>
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand text-uppercase" href="#">Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-uppercase text-dark" aria-current="page" href="{{url_for('posts.index')}}">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase text-dark" href="{{url_for('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase text-dark" href="{{url_for('about')}}">About</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- Start Container -->
+  <div class="container py-5">
+    {% block body %}
+
+    {% endblock %}
+  </div>
+  <!-- End Container -->
+
+  <!-- Start Footer -->
+  <footer class="px-5" style="background-color: #eee;">
+    <div class="row py-5 mx-2">
+      <div class="text col">
+        <h4>Newsletter Subcribe</h4>
+        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!</p>
+      </div>
+      <div class="subscribe col d-flex align-items-center text-end">
+        <input type="email" class="form-control w-75" placeholder="Enter Your Email">
+        <button type="submit" class="btn btn-outline-success ms-3"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+      <div class="copywrite text-center mt-4">
+        <p class="text-secondary mb-0 ">Copyright 	&copy;2023 All rights reserved </p>
+      </div>
+    </div>
+  </footer>
+  <script src="{{url_for('static', filename='bootstrap/js/bootstrap.js')}}"></script>
+  <!-- End Footer -->
+
+</body>
+</html>

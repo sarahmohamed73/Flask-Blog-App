@@ -1,0 +1,8 @@
+{% extends 'layouts/base.html' %}
+{% import 'macros/macros.html' as myposts %}
+{% block title %} About Us {% endblock %}
+{% block body %}
+  <div style="display: flex; justify-content: center">
+    <img src="{{url_for('static', filename='errors/images/404.png')}}" style="height: auto;">
+  </div>
+{% endblock %}

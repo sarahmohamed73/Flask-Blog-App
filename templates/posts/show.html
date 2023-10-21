@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+{% import 'macros/macros.html' as myposts %}
+{% block title %} Details {% endblock %}
+{% block body %}
+  <div class="row p-5 shadow-sm border-2 mx-auto " style="background-color: #eee; width: 1000px;">
+    <div class="col">
+      <img src="{{post.get_image_url}}" alt="">
+    </div>
+    <div class="col">
+      <h5 class="card-title">{{post.title}}</h5>
+      <hr>
+
+      <p class="card-text">{{post.body}}</p>
+      <hr>
+
+      <p class="card-text"><small class="text-body-secondary">Created:  {{post.created_at}}</small></p>
+      <p class="card-text"><small class="text-body-secondary">Last updated: {{post.updated_at}}</small></p>
+      <hr>
+
+      <div class="links">
+        <a href="{{url_for('posts.edit', id=post.id)}}" class="btn text-success "><i class="fa-regular fa-pen-to-square"></i></a>
+        <a href="{{post.get_delete_url}}" class="btn text-danger "><i class="fa-solid fa-minus"></i></a>
+      </div>
+      <hr>
+
+      <div>
+        <a href="{{url_for('posts.index')}}" class="btn btn-outline-success">&larr; Back To Posts Home</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

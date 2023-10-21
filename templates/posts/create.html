@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+{% block title %} Create Post {% endblock %}
+{% block body %}
+<form method="post" enctype=multipart/form-data>
+  <div class="mb-3">
+    <label for="" class="form-label">Title</label>
+    <input type="text"  name='title' class="form-control" id="" aria-describedby="emailHelp">
+  </div>
+    <div class="mb-3">
+    <label for="" class="form-label">Body</label>
+    <textarea name='body' class="form-control" aria-describedby="emailHelp"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Image</label>
+    <input type="file" name='image' class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
